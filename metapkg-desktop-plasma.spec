@@ -1,5 +1,5 @@
 Name:           metapkg-desktop-plasma
-Version:        1.0
+Version:        1.1
 Release:        1%{?dist}
 Summary:        Plasma 5 desktop metapackage
 
@@ -28,6 +28,9 @@ Requires:       kcm-gtk
 Requires:       kcm_systemd
 Requires:       kde-settings-pulseaudio
 
+# bluetooth support
+Requires:       bluedevil
+
 # breeze style for KDE 4
 Requires:       kde-style-breeze
 
@@ -53,5 +56,8 @@ systemctl enable sddm.service
 
 
 %changelog
+* Fri Jun 17 2016 Daniel Mach <daniel.mach@gmail.com> - 1.1-1
+- Add bluedevil.
+
 * Sun Apr 24 2016 Daniel Mach <daniel.mach@gmail.com> - 1.0-1
 - Initial package
