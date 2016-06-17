@@ -1,5 +1,5 @@
 Name:           metapkg-desktop-plasma-apps
-Version:        1.0
+Version:        1.1
 Release:        1%{?dist}
 Summary:        Applications for Plasma 5 desktop metapackage
 
@@ -13,6 +13,7 @@ Requires:       metapkg-desktop-xorg
 
 # kde apps
 Requires:       dolphin
+Requires:       gwenview
 Requires:       kate
 Requires:       kcalc
 Requires:       kde-baseapps
@@ -41,5 +42,8 @@ systemctl enable sddm.service
 
 
 %changelog
+* Fri Jun 17 2016 Daniel Mach <daniel.mach@gmail.com> - 1.1-1
+- Add gwenview.
+
 * Sun Apr 24 2016 Daniel Mach <daniel.mach@gmail.com> - 1.0-1
 - Initial package
