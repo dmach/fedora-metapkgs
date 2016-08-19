@@ -5,7 +5,6 @@ Summary:        Network tools metapackage
 
 Group:          Metapackages
 License:        MIT
-BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 
 Requires:       bind-utils
