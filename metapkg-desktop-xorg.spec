@@ -30,21 +30,16 @@ Requires:       NetworkManager
 Requires:       NetworkManager-wifi
 
 # fonts
-Requires:       dejavu-fonts-common
-Requires:       dejavu-lgc-sans-fonts
-Requires:       dejavu-lgc-sans-mono-fonts
-Requires:       dejavu-lgc-serif-fonts
+Requires:       abattis-cantarell-fonts
 Requires:       dejavu-sans-fonts
 Requires:       dejavu-sans-mono-fonts
 Requires:       dejavu-serif-fonts
-Requires:       liberation-fonts-common
+Requires:       gnu-free-mono-fonts
+Requires:       gnu-free-sans-fonts
+Requires:       gnu-free-serif-fonts
 Requires:       liberation-mono-fonts
 Requires:       liberation-sans-fonts
 Requires:       liberation-serif-fonts
-Requires:       oxygen-fonts
-Requires:       oxygen-fonts-common
-Requires:       oxygen-mono-fonts
-Requires:       oxygen-sans-fonts
 
 
 %description
