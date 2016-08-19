@@ -11,14 +11,14 @@ License:        MIT
 Requires:       xorg-x11-server-utils
 Requires:       xorg-x11-server-Xorg
 
-# drivers
-# mesa-dri-drivers required for sddm
+# Touchpad/Mouse support
+Requires:       xorg-x11-drv-libinput
+Requires:       xorg-x11-drv-evdev
+# Graphic drivers
 Requires:       mesa-dri-drivers
 Requires:       xorg-x11-drv-ati
-Requires:       xorg-x11-drv-evdev
 Requires:       xorg-x11-drv-intel
 Requires:       xorg-x11-drv-nouveau
-Requires:       xorg-x11-drv-synaptics
 Requires:       xorg-x11-drv-vesa
 
 # pulseaudio
