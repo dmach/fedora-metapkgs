@@ -1,5 +1,5 @@
 Name:           metapkg-desktop-plasma
-Version:        1.1
+Version:        1.2
 Release:        1%{?dist}
 Summary:        Plasma 5 desktop metapackage
 
@@ -23,7 +23,11 @@ Requires:       plasma-workspace-drkonqi
 Suggests:       plasma-workspace-wallpapers
 
 # settings
+%if 0%{?fedora} >= 25
+Requires:       kde-gtk-config
+%else
 Requires:       kcm-gtk
+%endif
 Requires:       kcm_systemd
 Requires:       kde-settings-pulseaudio
 
@@ -55,6 +59,9 @@ systemctl enable sddm.service
 
 
 %changelog
+* Sun Dec 25 2016 Daniel Mach <daniel.mach@gmail.com> - 1.2-1
+- Fix kde-gtk-config dependency on f25.
+
 * Fri Jun 17 2016 Daniel Mach <daniel.mach@gmail.com> - 1.1-1
 - Add bluedevil.
 
