@@ -1,5 +1,5 @@
 Name:           metapkg-devel-python2
-Version:        1.2
+Version:        1.3
 Release:        1%{?dist}
 Summary:        Python2 development metapackage
 
@@ -7,17 +7,11 @@ Group:          Metapackages
 License:        MIT
 
 
-Requires:       python-tools
-Requires:       python-virtualenv
-Requires:       python-pip
+Requires:       python2-pip
+Requires:       python2-pylint
 Requires:       python2-setuptools
-%if 0%{?fedora} == 23
-Requires:       python-flake8
-%else
-Requires:       python2-flake8
-%endif
-
-Requires:       pylint
+Requires:       python2-tools
+Requires:       python2-virtualenv
 
 Provides:       metapkg-devel-python
 Obsoletes:      metapkg-devel-python <= 1.1
@@ -31,6 +25,10 @@ Install packages for developing Python2 applications.
 
 
 %changelog
+* Fri Jul 19 2019 Daniel Mach <daniel.mach@gmail.com> - 1.3-1
+- Update package names to match the latest Fedora.
+- Drop python2-flake8 as it's no longer available.
+
 * Sun Mar 19 2017 Daniel Mach <daniel.mach@gmail.com> - 1.2-1
 - Split into -python2 and python3 standalone metapackages.
 
