@@ -1,5 +1,5 @@
 Name:           metapkg-tools-shell
-Version:        1.0
+Version:        1.2
 Release:        1%{?dist}
 Summary:        Shell tools metapackage
 
@@ -12,8 +12,10 @@ Requires:       bash-completion
 Requires:       openssh-clients
 Requires:       screen
 Requires:       sudo
+Requires:       tmux
 
 # tools
+Requires:       alsa-utils
 Requires:       chrony
 Requires:       dmidecode
 Requires:       dos2unix
@@ -24,30 +26,36 @@ Requires:       kbd
 Requires:       lsof
 Requires:       mc
 Requires:       pciutils
+Requires:       pinentry
+Requires:       psmisc
 Requires:       time
 Requires:       usbutils
 
-# networking
-Requires:       wireless-tools
-
 # doc readers
 Requires:       info
+Requires:       man-db
 Requires:       man-pages
 
 # packaging
+Requires:       fwupd
 Requires:       rpm
 Requires:       dnf
-%if 0%{fedora} && 0%{?fedora} <= 24
-# dnf-langpacks merged into dnf in f25
-Requires:       dnf-langpacks
-%endif
 Requires:       dnf-plugins-core
+Requires:       dnf-utils
 Recommends:     rpmconf
-Recommends:     rpmreaper
+Requires:       rpmreaper
 
 # editor
 Requires:       vim-minimal
-Recommends:     vim-enhanced
+Requires:       vim-enhanced
+
+# compression
+Requires:       bzip2
+Requires:       gzip
+Requires:       lz4
+Requires:       tar
+Requires:       xz
+Requires:       zstd
 
 
 %description
@@ -58,6 +66,11 @@ Install shell tools.
 
 
 %changelog
+* Sun Mar  1 2020 Daniel Mach <daniel.mach@gmail.com> - 1.2-1
+- Require alsa-utils, dnf-utils, fwupd, man-db, pinentry, psmisc, tmux, vim-enhanced
+- Require bzip2, gzip, lz4, tar, xz, zstd
+- Drop wireless-tools
+
 * Sun Dec 25 2016 Daniel Mach <daniel.mach@gmail.com> - 1.1-1
 - Remove dnf-langpacks dependency on fedora >= 25.
 

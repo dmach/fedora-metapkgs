@@ -1,5 +1,5 @@
 Name:           metapkg-desktop-plasma-apps
-Version:        1.2
+Version:        1.3
 Release:        1%{?dist}
 Summary:        Applications for Plasma 5 desktop metapackage
 
@@ -14,24 +14,18 @@ Requires:       metapkg-desktop-xorg
 Requires:       dolphin
 Requires:       gwenview
 Requires:       kate
+Requires:       kate-plugins
 Requires:       kcalc
 Requires:       kde-baseapps
-%if 0%{fedora} && 0%{?fedora} <= 25
-Requires:       kdepasswd
-%endif
 Requires:       konsole5
 Requires:       konversation
 Requires:       kscreen
-%if 0%{fedora} && 0%{?fedora} <= 25
-Requires:       ksnapshot
-%else
-Requires:       spectacle
-%endif
 Requires:       ksysguardd
 Requires:       kwalletmanager5
 Requires:       kwrite
 Requires:       okular
 Requires:       psi
+Requires:       spectacle
 
 
 %description
@@ -47,6 +41,10 @@ systemctl enable sddm.service
 
 
 %changelog
+* Sun Mar  1 2020 Daniel Mach <daniel.mach@gmail.com> - 1.3-1
+- Require kate-plugins, spectacle
+- Drop kdepasswd, ksnapshot
+
 * Sun Mar 19 2017 Daniel Mach <daniel.mach@gmail.com> - 1.2-1
 - Remove kdepasswd on Fedora >= 26
 - Replace ksnapshot with spectacle on Fedora >= 26

@@ -1,5 +1,5 @@
 Name:           metapkg-desktop-gnomeshell
-Version:        1.0
+Version:        1.1
 Release:        1%{?dist}
 Summary:        Gnome Shell 3 desktop metapackage
 
@@ -23,7 +23,6 @@ Requires:       NetworkManager-openvpn-gnome
 Requires:       NetworkManager-vpnc-gnome
 
 # extensions
-Requires:       gnome-shell-extension-alternate-tab
 Requires:       gnome-shell-extension-apps-menu
 Requires:       gnome-shell-extension-window-list
 Requires:       gnome-tweak-tool
@@ -31,8 +30,8 @@ Requires:       gnome-tweak-tool
 # display manager
 Requires:       gdm
 
-# weak deps
-Recommends:     libreoffice-gtk3
+# gtk3 support in libreoffice (conditional dependency)
+Requires:       (libreoffice-gtk3 if libreoffice-core)
 
 
 %description
@@ -48,5 +47,9 @@ systemctl enable gdm.service
 
 
 %changelog
+* Fri Jul 19 2019 Daniel Mach <daniel.mach@gmail.com> - 1.1-1
+- Turn libreoffice-gtk3 into a conditional dependency
+- Drop gnome-shell-extension-alternate-tab as it's built-in now
+
 * Sun Apr 24 2016 Daniel Mach <daniel.mach@gmail.com> - 1.0-1
 - Initial package

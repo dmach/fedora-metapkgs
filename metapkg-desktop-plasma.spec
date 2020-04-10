@@ -1,5 +1,5 @@
 Name:           metapkg-desktop-plasma
-Version:        1.2
+Version:        1.3
 Release:        1%{?dist}
 Summary:        Plasma 5 desktop metapackage
 
@@ -23,27 +23,26 @@ Requires:       plasma-workspace-drkonqi
 Suggests:       plasma-workspace-wallpapers
 
 # settings
-%if 0%{?fedora} >= 25
 Requires:       kde-gtk-config
-%else
-Requires:       kcm-gtk
-%endif
-Requires:       kcm_systemd
 Requires:       kde-settings-pulseaudio
+
+# display
+Requires:       colord-kde
+
+# sound
+Requires:       phonon-qt5
+Requires:       phonon-qt5-backend-gstreamer
 
 # bluetooth support
 Requires:       bluedevil
-
-# breeze style for KDE 4
-Requires:       kde-style-breeze
 
 # display manager
 Requires:       sddm
 Requires:       sddm-breeze
 Requires:       sddm-kcm
 
-# weak deps
-Recommends:     libreoffice-kde4
+# libreoffice - plasma gui
+Requires:       (libreoffice-kf5 if libreoffice-core)
 
 
 %description
@@ -59,6 +58,10 @@ systemctl enable sddm.service
 
 
 %changelog
+* Sun Mar  1 2020 Daniel Mach <daniel.mach@gmail.com> - 1.3-1
+- Require colord-kde, phonon-qt5, phonon-qt5-backend-gstreamer, libreoffice-kf5
+- Drop kcm-gtk, kcm_systemd, kde-style-breeze
+
 * Sun Dec 25 2016 Daniel Mach <daniel.mach@gmail.com> - 1.2-1
 - Fix kde-gtk-config dependency on f25.
 

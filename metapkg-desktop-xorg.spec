@@ -1,5 +1,5 @@
 Name:           metapkg-desktop-xorg
-Version:        1.0
+Version:        1.1
 Release:        1%{?dist}
 Summary:        Xorg metapackage
 
@@ -10,12 +10,16 @@ License:        MIT
 # server
 Requires:       xorg-x11-server-utils
 Requires:       xorg-x11-server-Xorg
+Requires:       xorg-x11-xinit
 
 # Touchpad/Mouse support
 Requires:       xorg-x11-drv-libinput
 Requires:       xorg-x11-drv-evdev
 # Graphic drivers
+Requires:       libva-vdpau-driver
 Requires:       mesa-dri-drivers
+Requires:       mesa-vdpau-drivers
+Requires:       xorg-x11-drv-amdgpu
 Requires:       xorg-x11-drv-ati
 Requires:       xorg-x11-drv-intel
 Requires:       xorg-x11-drv-nouveau
@@ -49,5 +53,8 @@ Install Xorg, drivers and fonts.
 
 
 %changelog
+* Sun Mar  1 2020 Daniel Mach <daniel.mach@gmail.com> - 1.1-1
+- Require libva-vdpau-driver, mesa-vdpau-drivers, xorg-x11-drv-amdgpu, xorg-x11-xinit
+
 * Sun Apr 24 2016 Daniel Mach <daniel.mach@gmail.com> - 1.0-1
 - Initial package
