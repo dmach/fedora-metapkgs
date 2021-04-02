@@ -1,5 +1,5 @@
 Name:           metapkg-desktop-plasma-apps
-Version:        1.3
+Version:        1.4
 Release:        1%{?dist}
 Summary:        Applications for Plasma 5 desktop metapackage
 
@@ -11,7 +11,9 @@ License:        MIT
 Requires:       metapkg-desktop-xorg
 
 # kde apps
+Requires:       ark
 Requires:       dolphin
+Requires:       dragon
 Requires:       gwenview
 Requires:       kate
 Requires:       kate-plugins
@@ -41,6 +43,9 @@ systemctl enable sddm.service
 
 
 %changelog
+* Fri Apr  2 2021 Daniel Mach <daniel.mach@gmail.com> - 1.4-1
+- Require arg, dragon
+
 * Sun Mar  1 2020 Daniel Mach <daniel.mach@gmail.com> - 1.3-1
 - Require kate-plugins, spectacle
 - Drop kdepasswd, ksnapshot

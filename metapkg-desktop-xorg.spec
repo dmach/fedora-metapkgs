@@ -1,5 +1,5 @@
 Name:           metapkg-desktop-xorg
-Version:        1.1
+Version:        1.2
 Release:        1%{?dist}
 Summary:        Xorg metapackage
 
@@ -8,9 +8,15 @@ License:        MIT
 
 
 # server
-Requires:       xorg-x11-server-utils
 Requires:       xorg-x11-server-Xorg
 Requires:       xorg-x11-xinit
+
+# utils
+%if 0%{?fedora} && 0%{?fedora} <= 34
+Requires:       xorg-x11-server-utils
+%else
+Requires:       xrandr
+%endif
 
 # Touchpad/Mouse support
 Requires:       xorg-x11-drv-libinput
@@ -53,6 +59,9 @@ Install Xorg, drivers and fonts.
 
 
 %changelog
+* Fri Apr  2 2021 Daniel Mach <daniel.mach@gmail.com> - 1.2-1
+- Require xrandr instead of xorg-x11-server-utils on fedora >= 35
+
 * Sun Mar  1 2020 Daniel Mach <daniel.mach@gmail.com> - 1.1-1
 - Require libva-vdpau-driver, mesa-vdpau-drivers, xorg-x11-drv-amdgpu, xorg-x11-xinit
 
